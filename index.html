@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABDP — Awareness-Based Defense Protocol</title>
+
+<!-- SEO -->
+<meta name="description" content="ABDP — Awareness-Based Defense Protocol. Train your human firewall across 10 real-world social engineering scenarios. Vishing, CEO fraud, phishing, tailgating and more. Free, no download required.">
+<meta name="keywords" content="social engineering, cybersecurity training, phishing simulator, security awareness, vishing, CEO fraud, cyber attack simulation">
+<meta name="author" content="ABDP">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ABDP — Awareness-Based Defense Protocol">
+<meta property="og:description" content="Train your human firewall. 10 real-world social engineering attack simulations — vishing, CEO fraud, phishing, physical tailgating and more. Free, no account required.">
+<meta property="og:image" content="https://abdp.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ABDP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ABDP — Awareness-Based Defense Protocol">
+<meta name="twitter:description" content="94% of breaches start with a human being manipulated. ABDP trains you to hold the line. 10 real-world attack scenarios. Free.">
+<meta name="twitter:image" content="https://abdp.io/og-image.png">
+
+<!-- Favicon (inline SVG — no extra file needed) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23060a0e'/><text y='72' x='8' font-size='72' font-family='monospace' fill='%2300f5c4'>&#x26A1;</text></svg>">
+<meta name="theme-color" content="#060a0e">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- React (CDN — loaded before our scripts) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+
+<!-- Babel (JSX transformer — swap for precompiled build in production) -->
+<!-- See build.js to remove this and precompile for production -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+</head>
+<body>
+
+<!-- React mounts here -->
+<div id="root"></div>
+
+<!--
+  ═══════════════════════════════════════════
+  SCRIPT LOAD ORDER
+  Plain JS files load first (no JSX).
+  JSX files load after — they depend on the
+  variables defined in the plain JS files.
+  ═══════════════════════════════════════════
+-->
+
+<!-- Plain JS (no JSX — load as regular scripts) -->
+<script src="src/auth.js"></script>
+<script src="src/db.js"></script>
+<script src="src/scenarios.js"></script>
+<script src="src/constants.js"></script>
+
+<!-- JSX components (Babel transforms these in-browser) -->
+<script type="text/babel" src="src/components.jsx"></script>
+<script type="text/babel" src="src/GameArena.jsx"></script>
+<script type="text/babel" src="src/ResultScreen.jsx"></script>
+<script type="text/babel" src="src/ScenarioGrid.jsx"></script>
+<script type="text/babel" src="src/PlayerDashboard.jsx"></script>
+<script type="text/babel" src="src/ChangePasswordModal.jsx"></script>
+<script type="text/babel" src="src/GuestArena.jsx"></script>
+<script type="text/babel" src="src/AuthScreen.jsx"></script>
+<script type="text/babel" src="src/App.jsx"></script>
+
+<!-- Mount React app (runs after all scripts are loaded) -->
+<script type="text/babel">
+  const { useState, useEffect, useRef, useCallback } = React;
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>

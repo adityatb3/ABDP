@@ -1,0 +1,13 @@
+{
+  "name": "abdp-awareness-defense-protocol",
+  "version": "1.0.0",
+  "description": "Awareness-Based Defense Protocol — 10 interactive scenarios, free, no backend.",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.22.0"
+  }
+}

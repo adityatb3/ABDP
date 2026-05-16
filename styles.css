@@ -1,0 +1,43 @@
+/* ═══════════════════════════════════════════════════
+   ABDP — Global Styles
+   ═══════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#060a0e;--bg2:#0b1118;--bg3:#0f1720;--surface:#131b24;--surface2:#1a2535;
+  --border:#1c2b3a;--border2:#243548;
+  --accent:#00f5c4;--accent2:#ff3c5f;--accent3:#f5a623;--accent4:#7b5cfa;
+  --text:#c0d0e0;--text-dim:#4a6070;--text-bright:#fff;
+  --mono:'Share Tech Mono',monospace;--display:'Bebas Neue',sans-serif;--body:'DM Sans',sans-serif;
+  --glow:0 0 20px rgba(0,245,196,.25);--glow2:0 0 20px rgba(255,60,95,.3);
+}
+
+/* ── Base ── */
+html,body,#root{height:100%;background:var(--bg);color:var(--text);font-family:var(--body);}
+
+/* Scanline overlay */
+body::before{
+  content:'';position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.02) 2px,rgba(0,0,0,.02) 4px);
+  pointer-events:none;z-index:9999;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);}
+
+/* ── Form elements ── */
+input,button,textarea,select{font-family:var(--body);}
+a{color:var(--accent);text-decoration:none;}
+
+/* ── Animations ── */
+@keyframes fadeIn     {from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInFast {from{opacity:0} to{opacity:1}}
+@keyframes pulse      {0%,100%{opacity:1} 50%{opacity:.4}}
+@keyframes spin       {to{transform:rotate(360deg)}}
+@keyframes blink      {0%,49%{opacity:1} 50%,100%{opacity:0}}
+@keyframes slideIn    {from{transform:translateX(-12px);opacity:0} to{transform:translateX(0);opacity:1}}
+@keyframes bounce     {0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-6px);opacity:1}}
+@keyframes scoreFloat {0%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-50px)}}
